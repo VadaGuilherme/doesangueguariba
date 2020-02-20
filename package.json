@@ -4,7 +4,7 @@
   "description": "[![Netlify Status](https://api.netlify.com/api/v1/badges/8e3021e7-5723-4cb6-8d26-3a9c4d158491/deploy-status)](https://app.netlify.com/sites/doesangueguariba/deploys)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/VadaGuilherme/doesangueguariba/issues"
   },
-  "homepage": "https://github.com/VadaGuilherme/doesangueguariba#readme"
+  "homepage": "https://github.com/VadaGuilherme/doesangueguariba#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2",
+    "nunjucks": "^3.2.0"
+  }
 }

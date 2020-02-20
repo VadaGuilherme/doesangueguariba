@@ -4,14 +4,15 @@
 <header>
     <title>Doe sangue! Doe vida!</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </header>
 
 <body>
     <header>
-        <img class="logo" src="img/logo.png" alt="Imagem de DOE">
+        <img class="logo" src="/img/logo.png" alt="Imagem de DOE">
         <h2>A sua doação importa</h2>
         <p>Até 3 vidas com 1 doação</p>
         <p>Mais de 38.00 doações são necessarias todos os dias</p>
@@ -21,51 +22,41 @@
 
     <section class="form hide">
         <h2>Entre na lista de doadores</h2>
-        <form action="/">
+        <form action="/" method="POST">
             <div class="form-row">
                 <div class="col">
-                  <input type="text" class="form-control" d="nome" placeholder="Nome">
+                    <input type="text" class="form-control" name="name" placeholder="Nome">
                 </div>
             </div>
             <div class="form-row">
                 <div class="col">
-                    <input type="text" class="form-control" id="tipoSanguineo" placeholder="Tipo sanguíneo">
+                    <input type="text" class="form-control" name="blood" placeholder="Tipo sanguíneo">
                 </div>
             </div>
             <div class="form-row">
                 <div class="col">
-                    <input type="tel" class="form-control" id="celular" placeholder="Celular">
+                    <input type="tel" class="form-control" name="cellphone" placeholder="Celular">
                 </div>
             </div>
-            <button>Quero ajudar</button>
+            <button>Quero ajudar a</button>
         </form>
     </section>
 
     <main>
         <h2>Últimos <span>doadores</span></h2>
         <section class="donors">
+            {% for donor in donors %}
             <div class="donor">
-                <div class="blood">AB+</div>
-                <p>Guilherme Vada</p>
+                <div class="blood">{{ donor.blood }}</div>
+                <p>{{ donor.name }}</p>
             </div>
-            <div class="donor">
-                <div class="blood">B</div>
-                <p>Andre Sousa</p>
-            </div>
-            <div class="donor">
-                <div class="blood">A</div>
-                <p>Felipe André</p>
-            </div>
-            <div class="donor">
-                <div class="blood">A+</div>
-                <p>Janaina Ferreira</p>
-            </div>
+            {% endfor %}
         </section>
     </main>
 
     <footer>Com <span>❤</span></footer>
 
-    <script src="js/script.js"></script>
+    <script src="/js/script.js"></script>
 
 </body>
 
